@@ -1,4 +1,3 @@
-import java.lang.reflect.Method;
 import java.util.Random;
 public class Guard {
     //calls random
