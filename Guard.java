@@ -104,7 +104,7 @@ public class Guard {
     }
 
     private int punch() {
-        int damage = rand.nextInt(5) + 5; //max of 5 damage for punch
+        int damage = rand.nextInt(5) + 1; //max of 5 damage for punch
         return damage;
     }
     private void heasitate() {
@@ -115,8 +115,8 @@ public class Guard {
         guardStats[0] = newHealth;
     }
 
-    public int getHealth(int health) {
-        health = guardStats[0];
+    public int getHealth() {
+        int health = guardStats[0];
         return health;
     }
 }
