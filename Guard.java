@@ -71,8 +71,11 @@ public class Guard {
     }
 
     public int block() {
-        int blockAmount = rand.nextInt(3);
-        if (blockAmount == 1) {
+        //block blocks attack. chance of damage to be done
+        int blockAmount = rand.nextInt(4);
+        if (blockAmount == 0) {
+            blockAmount = 100;
+        } else if (blockAmount == 1) {
           blockAmount = 3;  
         } else if (blockAmount == 2) {
             blockAmount = 5;
@@ -83,12 +86,22 @@ public class Guard {
 
     }
 
-    private void parry() {
-        
+    private int parry() {
+        //parry blocks attack while doing damage
+        int damageAmount = rand.nextInt(3) + 1;
+
+        if (damageAmount == 1) {
+            damageAmount = 3;  
+        } else if (damageAmount == 2) {
+            damageAmount = 5;
+        } else if (damageAmount == 3) {
+            damageAmount = 7;
+        }
+        return damageAmount;
     }
 
     private int punch() {
-        int damage = 0;
+        int damage = rand.nextInt(5) + 5; //max of 5 damage for punch
         return damage;
     }
     private void heasitate() {
