@@ -59,7 +59,7 @@ public class Skeleton {
     }
 
     public void death() {
-        
+                
     }
     public void revive() {
 
