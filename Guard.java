@@ -107,7 +107,7 @@ public class Guard {
         return damage;
     }
     private void heasitate() {
-
+        System.out.println("The Guard hesitates");
     }
     //get and set health
     public void setHealth(int newHealth) {
