@@ -21,7 +21,7 @@ public class Guard {
     }
 
     //methods
-    public void attack() {
+    public int attack() {
         /*
         Random key:
         0 = swipe
@@ -29,10 +29,11 @@ public class Guard {
         2 = hesitate (does nothing)
         */
         int attack = rand.nextInt(3);
+        int damage = 0;
         if (attack == 0) {
-            swipe();
+            damage = swipe();
         } else if (attack == 1) {
-            punch();
+            damage = punch();
         } else if (attack == 2) {
             if (guardStats[2] == 1) {
                 //does nothing
@@ -41,7 +42,7 @@ public class Guard {
                 //does random again, half half chance
                 attack = rand.nextInt(2);
                 if (attack == 1) {
-                    swipe();
+                    damage = swipe();
                 } else {
                     heasitate();
                 }
@@ -49,12 +50,13 @@ public class Guard {
                 //does random again, 1/3 chance of heasitating
                 attack = rand.nextInt(3);
                 if (attack == 1) {
-                    swipe();
+                    damage = swipe();
                 } else {
                     heasitate();
                 }
             }
         }
+        return damage;
     }
 
     public void death() {
@@ -63,20 +65,31 @@ public class Guard {
 
     // methods for diffrent attacks/defenses
     private int swipe() {
-        int damage = 0;
+        int damage = rand.nextInt(3); //3 levels of damage
+        damage = damage * guardStats[1];
         return damage;
     }
 
-    private void block() {
-        
+    public int block() {
+        int blockAmount = rand.nextInt(3);
+        if (blockAmount == 1) {
+          blockAmount = 3;  
+        } else if (blockAmount == 2) {
+            blockAmount = 5;
+        } else if (blockAmount == 3) {
+            blockAmount = 10;
+        }
+        return blockAmount;
+
     }
 
     private void parry() {
         
     }
 
-    private void punch() {
-        
+    private int punch() {
+        int damage = 0;
+        return damage;
     }
     private void heasitate() {
 
