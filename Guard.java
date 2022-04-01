@@ -86,7 +86,7 @@ public class Guard {
 
     }
 
-    private int parry() {
+    public int parry() {
         //parry blocks attack while doing damage
         int damageAmount = rand.nextInt(3) + 1;
 
