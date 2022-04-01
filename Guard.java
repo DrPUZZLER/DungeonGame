@@ -38,6 +38,7 @@ public class Guard {
             if (guardStats[2] == 1) {
                 //does nothing
                 heasitate();
+                damage = 0;
             } else if (guardStats[2] == 2) {
                 //does random again, half half chance
                 attack = rand.nextInt(2);
@@ -45,6 +46,7 @@ public class Guard {
                     damage = swipe();
                 } else {
                     heasitate();
+                    damage = 0;
                 }
             } else if (guardStats[2] == 3) {
                 //does random again, 1/3 chance of heasitating
@@ -53,6 +55,7 @@ public class Guard {
                     damage = swipe();
                 } else {
                     heasitate();
+                    damage = 0;
                 }
             }
         }
