@@ -59,7 +59,7 @@ public class Skeleton {
     }
 
     public void death() {
-                
+        System.out.printf("The Skeleton falls into a pile of bones.%nThe bones are stirring. You should clear before the skeleton revives.");
     }
     public void revive() {
 
@@ -67,7 +67,7 @@ public class Skeleton {
 
     // methods for diffrent attacks/defenses
     private int shoot() {
-        int damage = rand.nextInt(3); //3 levels of damage
+        int damage = rand.nextInt(5) + 1; //5 levels of damage
         damage = damage * skeletonStats[1];
         return damage;
     }
