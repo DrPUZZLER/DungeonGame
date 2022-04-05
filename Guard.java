@@ -67,7 +67,7 @@ public class Guard {
 
     // methods for diffrent attacks/defenses
     private int swipe() {
-        int damage = rand.nextInt(3); //3 levels of damage
+        int damage = rand.nextInt(3) + 1; //3 levels of damage
         damage = damage * guardStats[1];
         return damage;
     }

@@ -67,7 +67,7 @@ public class Skeleton {
 
     // methods for diffrent attacks/defenses
     private int shoot() {
-        int damage = rand.nextInt(3); //3 levels of damage
+        int damage = rand.nextInt(5) + 1; //5 levels of damage
         damage = damage * skeletonStats[1];
         return damage;
     }

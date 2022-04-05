@@ -32,11 +32,12 @@ public class Spider {
     }
 
     public void death() {
+        
     }
 
     // methods for diffrent attacks/defenses
     private int lunge() {
-        int damage = rand.nextInt(3); //3 levels of damage
+        int damage = rand.nextInt(4) + 1; //4 levels of damage
         damage = damage * spiderStats[1];
         return damage;
     }
