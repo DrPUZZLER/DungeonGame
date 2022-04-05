@@ -59,7 +59,7 @@ public class Skeleton {
     }
 
     public void death() {
-                
+        System.out.printf("The Skeleton falls into a pile of bones.%nThe bones are stirring. You should clear before the skeleton revives.");
     }
     public void revive() {
 
