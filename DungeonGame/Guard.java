@@ -27,6 +27,8 @@ public class Guard {
         1 = punch
         2 = hesitate (does nothing)
         */
+
+
         int attack = rand.nextInt(3);
         int damage = 0;
         if (attack == 0) {
@@ -61,8 +63,8 @@ public class Guard {
         return damage;
     }
 
-    public void death() {
-        
+    public void death(Guard guardToKill) {
+        guardToKill = null;
     }
 
     // methods for diffrent attacks/defenses

@@ -79,9 +79,6 @@ public class Dog {
     private void heasitate() {
         System.out.println("The Dog hesitates");
     }
-    public void flee() {
-        
-    }
     //get and set health
     public void setHealth(int newHealth) {
         dogStats[0] = newHealth;
