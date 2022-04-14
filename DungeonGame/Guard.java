@@ -69,7 +69,7 @@ public class Guard {
 
     // methods for diffrent attacks/defenses
     private int swipe() {
-        int damage = rand.nextInt(3) + 1; //3 levels of damage
+        int damage = rand.nextInt(3) + 3; //3 levels of damage (3,4,5)
         damage = damage * guardStats[1];
         return damage;
     }
@@ -105,8 +105,7 @@ public class Guard {
     }
 
     private int punch() {
-        int damage = rand.nextInt(5) + 1; //max of 5 damage for punch
-        return damage;
+        return guardStats[1];
     }
     private void heasitate() {
         System.out.println("The Guard hesitates");
