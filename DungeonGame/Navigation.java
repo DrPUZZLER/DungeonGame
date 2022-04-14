@@ -8,9 +8,6 @@ public class Navigation {
     public static void enemyRiddle() {
         
     }
-    public static void enemyDoor() {
-        
-    }
     public static void hint1() {
         Riddle.hint();
     }
