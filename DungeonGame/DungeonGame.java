@@ -1,6 +1,17 @@
 public class DungeonGame {
     public static void main(String[] args) {
-       Spider spider= new Spider(1, 1, 1);
+       
+
+    } //end of main
+
+
+    public static void doorGo() {
+         
+    }
+    public static void hallwayGo() {
+
+    }
+    public static void innerChamberGo() {
 
     }
 }
