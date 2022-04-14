@@ -12,22 +12,22 @@ public class Navigation {
         
     }
     public static void hint1() {
-        
+        Riddle.hint();
     }
     public static void hint2() {
-        
+        Riddle.hint();
     }
     public static void riddle() {
-        
+        Riddle.askRiddle();
     }
     public static void door() {
-        
+        DungeonGame.doorGo();
     }
     public static void hallway() {
-        
+        DungeonGame.hallwayGo();
     }
     public static void innerChamber() {
-        
+        DungeonGame.innerChamberGo();
     }
     public static void monster() {
         
