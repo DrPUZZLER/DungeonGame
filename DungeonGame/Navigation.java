@@ -1,4 +1,16 @@
 public class Navigation {
+    public static void enemyHint1() {
+        
+    }
+    public static void enemyHint2() {
+        
+    }
+    public static void enemyRiddle() {
+        
+    }
+    public static void enemyDoor() {
+        
+    }
     public static void hint1() {
         
     }
