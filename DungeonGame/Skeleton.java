@@ -62,7 +62,7 @@ public class Skeleton {
         System.out.printf("The Skeleton falls into a pile of bones.%nThe bones are stirring. You should clear before the skeleton revives.");
     }
     public void revive() {
-
+        setHealth(10);
     }
 
     // methods for diffrent attacks/defenses

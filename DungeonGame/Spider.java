@@ -8,7 +8,7 @@ public class Spider {
     //constructors
     public Spider(int health, int strength, int speed) {
         /*
-        Health can be from 20-50
+        Health can be from 20-40
         Strength can be from 1-5
         Speed can be from 1-3
         */
@@ -28,6 +28,28 @@ public class Spider {
         0 = lunge
         1 = hesitate (does nothing)
         */
+        if (attack == 0) {
+            lunge();
+        } else if (attack == 1) {
+            if (spiderStats[2] == 1) {
+                heasitate();
+            } else if (spiderStats[2] == 2) {
+                attack = rand.nextInt(2);
+                if (attack == 0) {
+                    lunge();
+                } else {
+                    heasitate();
+                }
+            } else if (spiderStats[2] == 3) {
+                attack = rand.nextInt(3);
+                if (attack == 0) {
+                    lunge();
+                } else {
+                    heasitate();
+                }
+            }
+        }
+
         return damage;
     }
 
@@ -43,7 +65,7 @@ public class Spider {
     }
 
     private void heasitate() {
-        System.out.println("The Skeleton hesitates");
+        System.out.println("The Spider hesitates");
     }
     //get and set health
     public void setHealth(int newHealth) {
