@@ -114,8 +114,7 @@ public class DungeonGame {
                 case "ATTACK SWIPE":
                 if (inCombat == true) {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
-                        System.out.printf("You swipe your sword. You do %f damage.%n", thePlayer.swipe());
-                        System.out.printf("The guard attacks. You get %f damage.%n", guardDoor.attack());
+                        
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
                         
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
@@ -169,7 +168,7 @@ public class DungeonGame {
 
     //combat methods
 
-    public static boolean inCombat = false;
+    public static boolean inCombat = true;
     
    
     
