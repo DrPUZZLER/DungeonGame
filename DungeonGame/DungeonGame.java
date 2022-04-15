@@ -1,19 +1,17 @@
-import java.util.Scanner; 
+import java.util.Scanner;
 
 public class DungeonGame {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         // instantiate constructors for enemies
         Spider spiderHint1 = new Spider(15, 2, 2);
         Spider spiderHint2 = new Spider(20, 2, 2);
         Guard guardDoor = new Guard(40, 5, 3);
         Guard guardRiddle = new Guard(25, 3, 1);
-
-        //this is the variable that handles the players current location. valid values are found in the enum Location.java
-        Location currentLocation = Location.START;
+        Player thePlayer = new Player(100, 2, 2);
 
         //create scanner and input var
         String userAnswer; 
-        Scanner input = new Scanner(System.in);     
+        Scanner input = new Scanner(System.in);
 
         //call help a first time
         help();
@@ -27,22 +25,34 @@ public class DungeonGame {
 
                 case "GO HINT 1":
                 if (spiderHint1.getHealth() != 0) {
-
+                    
                 } else {
 
                 }
                 break;
 
                 case "GO HINT 2":
-                System.out.printf("");
+                if (spiderHint2.getHealth() != 0) {
+                    
+                } else {
+
+                }
                 break;
                 
                 case "GO RIDDLE":
-                System.out.printf("");
+                if (guardRiddle.getHealth() != 0) {
+                    
+                } else {
+
+                }
                 break;
 
                 case "GO DOOR":
-                System.out.printf("");
+                if (guardDoor.getHealth() != 0) {
+                    
+                } else {
+
+                }
                 break;
 
                 case "GO HALLWAY":
@@ -70,7 +80,7 @@ public class DungeonGame {
                 break;
 
                 case "LOOK HINT 1":
-                if (currentLocation == Location.HINT1) {
+                if (Navigation.currentLocation == Location.HINT1) {
 
                 } else {
                     Look.hint1Far();
@@ -78,7 +88,7 @@ public class DungeonGame {
                 break;
 
                 case "LOOK HINT1":
-                if (currentLocation == Location.HINT2) {
+                if (Navigation.currentLocation == Location.HINT2) {
 
                 } else {
                     Look.hint2Far();
@@ -86,9 +96,46 @@ public class DungeonGame {
                 break;
 
                 case "LOOK HINT 2":
+                if (Navigation.currentLocation == Location.HINT1) {
+
+                } else {
+                    Look.hint1Far();
+                }
                 break;
 
                 case "LOOK HINT2":
+                if (Navigation.currentLocation == Location.HINT2) {
+
+                } else {
+                    Look.hint2Far();
+                }
+                break;
+
+                case "ATTACK SWIPE":
+                if (inCombat == true) {
+                    if (Navigation.currentLocation == Location.ENEMY_DOOR) {
+                        System.out.printf("You swipe your sword. You do %f damage.%n", thePlayer.swipe());
+                        System.out.printf("The guard attacks. You get %f damage.%n", guardDoor.attack());
+                    } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
+                        
+                    } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
+                        
+                    } else if (Navigation.currentLocation == Location.ENEMY_HINT2) {
+                        
+                    } else {
+                        System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.");
+                    }
+                } else {
+                    System.out.printf("Currently not in combat.");
+                }
+                break;
+                
+                case "ATTACK PUNCH":
+                if (inCombat == true) {
+                    
+                } else {
+                    System.out.printf("Currently not in combat.");
+                } 
                 break;
                 
                 default:
@@ -106,7 +153,7 @@ public class DungeonGame {
         System.out.printf("*To look at somthing, use command 'look' preceeding all requests.%n");
         System.out.printf("*To go to a place, use command 'go' preceeding all requests.%n");
         System.out.printf("*When fighting a monster, use command 'attack' preceeding all requests.%n");
-        System.out.printf("Valid attacks are:%n*Swipe%n*Punch%n*Block%n*Parry%n");
+        System.out.printf("Valid attacks are:%n*Swipe%n*Punch%n");
     }
 
     //navigation methods
@@ -116,7 +163,14 @@ public class DungeonGame {
     public static void hallwayGo() {
 
     }
-    public static void innerChamberGo() {
+    public static void chamberGo() {
         
     }
+
+    //combat methods
+
+    public static boolean inCombat = false;
+    
+   
+    
 }
