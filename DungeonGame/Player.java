@@ -14,7 +14,7 @@ public  Player(int health, int strength, int speed, int score) {
 }
 
 public int swipe() {
-    int damage = rand.nextInt(3) + 1; //3 levels of damage
+    int damage = rand.nextInt(3) + 3; //3 levels of damage (3,4,5)
     damage = damage * playerStats[1];
     return damage;
 }
