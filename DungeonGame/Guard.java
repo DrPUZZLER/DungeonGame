@@ -8,11 +8,10 @@ public class Guard {
     //constructors
     public Guard(int health, int strength, int speed) {
         /*
-        Health can be from 10-30
+        Health can be from 20-40
         Strength can be from 1-5
         Speed can be from 1-3
         */
-
 
         guardStats[0] = health;
         guardStats[1] = strength;
