@@ -9,7 +9,7 @@ public class DungeonGame {
 
 
     public static void doorGo() {
-         
+        
     }
     public static void hallwayGo() {
 
