@@ -9,10 +9,8 @@ public class Navigation {
         
     }
     public static void hint1() {
-        Riddle.hint();
     }
     public static void hint2() {
-        Riddle.hint();
     }
     public static void riddle() {
         Riddle.askRiddle();

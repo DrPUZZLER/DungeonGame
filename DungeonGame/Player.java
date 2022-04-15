@@ -2,15 +2,15 @@
 import java.util.Random;
 public class Player{
 
-
 Random rand = new Random();
+
     //fields
-private int[] playerStats= new int[4];
-public  Player(int health, int strength, int speed, int score) {
+    private int[] playerStats = new int[4];
+//constructor
+public  Player(int health, int strength, int speed) {
   this.playerStats[0] = health;
   this.playerStats[1] = strength;
   this.playerStats[2] = speed;
-  this.playerStats[3] = score;
 }
 
 public int swipe() {
@@ -72,9 +72,5 @@ public int getStrength(){
 public int getSpeed(){
     return playerStats[2];
 
-}
-public int getScore(){
-
-    return playerStats[3];
 }
 }
