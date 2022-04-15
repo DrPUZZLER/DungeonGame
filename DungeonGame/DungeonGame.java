@@ -14,11 +14,12 @@ public class DungeonGame {
         do{
             userAnswer  = input.nextLine(); 
             switch (userAnswer) {
-                
+
+                    case "hi":
                     System.out.println("Type 'help' if you need a refresher on how to speak english.");
 
             }
-        } while()
+        } while(userAnswer == "hi");
 
     } //end of main
 
