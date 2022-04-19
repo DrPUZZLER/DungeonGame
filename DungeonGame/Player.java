@@ -16,11 +16,13 @@ public  Player(int health, int strength, int speed) {
 public int swipe() {
     int damage = rand.nextInt(3) + 3; //3 levels of damage (3,4,5)
     damage = damage * playerStats[1];
+    System.out.printf("You swipe your sword. You do %d damage.%n", damage);
     return damage;
 }
 
 public int punch() {
     int damage = rand.nextInt(5) + 1; //max of 5 damage for punch
+    System.out.printf("You sock that monster in the face. You do %d damage.%n", damage);
     return damage;
 }
 
