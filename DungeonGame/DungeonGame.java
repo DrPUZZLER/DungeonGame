@@ -51,7 +51,7 @@ public class DungeonGame {
                 if (guardDoor.getHealth() != 0) {
                     
                 } else {
-                        Navigation.guardDoor();
+                        Navigation.door();
                 }   
                 break;
 
@@ -147,7 +147,7 @@ public class DungeonGame {
                 break;
 
             }
-        } while(userAnswer == "hi");
+        } while(userAnswer != "HI");
 
     } //end of main
 

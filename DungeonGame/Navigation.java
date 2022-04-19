@@ -21,12 +21,12 @@ public class Navigation {
     }
     public static void riddle() {
         currentLocation = Location.RIDDLE;
-        System.out.printf("You have seen Riddle")
+        System.out.printf("You have seen Riddle");
     }
     public static void door() {
         currentLocation = Location.DOOR;
         DungeonGame.doorGo();
-        System.out.printf("You have walked unto door";)
+        System.out.printf("You have walked unto door");
     }
     
 }
