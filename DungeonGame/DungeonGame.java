@@ -114,13 +114,17 @@ public class DungeonGame {
                 case "ATTACK SWIPE":
                 if (inCombat == true) {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
-                        System.out.printf("");
+                        thePlayer.swipe();
+                        guardDoor.attack();
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
-                        
+                        thePlayer.swipe();
+                        guardRiddle.attack();
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
-                        
+                        thePlayer.swipe();
+                        spiderHint1.attack();
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT2) {
-                        
+                        thePlayer.swipe();
+                        spiderHint1.attack();
                     } else {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.");
                     }
