@@ -8,4 +8,7 @@ public class Look {
     public static void hint2Far() {
         System.out.printf("You are too far away from Hint 2 to look at it.");
     }
+    public static void hint() {
+        System.out.printf("Which hint? There are 2 of them!%n");
+    }
 }
