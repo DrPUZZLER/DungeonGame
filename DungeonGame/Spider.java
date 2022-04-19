@@ -69,7 +69,7 @@ public class Spider {
     }
     //get and set health
     public void setHealth(int newHealth) {
-        spiderStats[0] = newHealth;
+        spiderStats[0] = getHealth() - newHealth;
     }
 
     public int getHealth() {

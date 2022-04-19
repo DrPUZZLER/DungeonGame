@@ -63,7 +63,7 @@ public class Guard {
     }
 
     public void death(Guard guardToKill) {
-        guardToKill = null;
+
     }
 
     // methods for diffrent attacks/defenses
@@ -83,7 +83,7 @@ public class Guard {
     }
     //get and set health
     public void setHealth(int newHealth) {
-        guardStats[0] = newHealth;
+        guardStats[0] = getHealth() - newHealth;
     }
 
     public int getHealth() {

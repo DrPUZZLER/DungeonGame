@@ -3,21 +3,20 @@ public class Riddle {
 
     public static boolean key = false; 
 
-    public static void askRiddle(){
+    public static String askRiddle(){
 
-        System.out.println("I'm tall when I am young, and I'm short when I'm old. ");
-        System.out.println("What am I?");
+        return "I'm tall when I am young, and I'm short when I'm old. What am I?";
     
     }
     public static void hint(){
-            System.out.println("I am a non-living object...");
+            System.out.printf("I am a non-living object...%n");
         }
     public static void anotherHint(){
-            System.out.println("I can create light...");
+            System.out.printf("I can create light...%n");
         }
     public static void key(){
-        System.out.println("Correct!");
-        System.out.println("You have recieved a key!");
+        System.out.printf("Correct!%n");
+        System.out.printf("You have recieved a key!%n");
         key = true; 
     }
 
