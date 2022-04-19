@@ -2,6 +2,8 @@ public class Navigation {
     //this is the variable that handles the players current location. valid values are found in the enum Location.java
     public static Location currentLocation = Location.ENEMY_DOOR;
 
+    public static void eneymyDoor() {
+    }
     public static void enemyHint1() {
         
     }
@@ -23,10 +25,6 @@ public class Navigation {
     public static void door() {
         currentLocation = Location.DOOR;
         DungeonGame.doorGo();
-    }
-    public static void hallway() {
-        currentLocation = Location.HALLWAY;
-        DungeonGame.hallwayGo();
     }
     public static void monster() {
         

@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class DungeonGame {
         public static void main(String[] args) {
         // instantiate constructors for enemies
@@ -24,15 +23,15 @@ public class DungeonGame {
             switch (userAnswer.toUpperCase()) {
 
                 case "GO HINT 1":
-                if (spiderHint1.getHealth() != 0) {
+                if (spiderHint1.getHealth() <= 0) {
                     
                 } else {
-
+                    Navigation.enemyHint1();
                 }
                 break;
 
                 case "GO HINT 2":
-                if (spiderHint2.getHealth() != 0) {
+                if (spiderHint2.getHealth() <= 0) {
                     
                 } else {
 
@@ -40,7 +39,7 @@ public class DungeonGame {
                 break;
                 
                 case "GO RIDDLE":
-                if (guardRiddle.getHealth() != 0) {
+                if (guardRiddle.getHealth() <= 0) {
                     
                 } else {
 
@@ -48,19 +47,11 @@ public class DungeonGame {
                 break;
 
                 case "GO DOOR":
-                if (guardDoor.getHealth() != 0) {
+                if (guardDoor.getHealth() <= 0) {
                     
                 } else {
 
                 }
-                break;
-
-                case "GO HALLWAY":
-                System.out.printf("");
-                break;
-
-                case "GO CHAMBER":
-                System.out.printf("");
                 break;
 
                 case "HELP":
@@ -116,20 +107,36 @@ public class DungeonGame {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
                         thePlayer.swipe();
                         guardDoor.attack();
+                        if (guardDoor.getHealth() <= 0) {
+                            Navigation.door();
+                            inCombat = false;
+                        }
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
                         thePlayer.swipe();
                         guardRiddle.attack();
+                        if (guardRiddle.getHealth() <= 0) {
+                            Navigation.riddle();
+                            inCombat = false;
+                        }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
                         thePlayer.swipe();
                         spiderHint1.attack();
+                        if (spiderHint1.getHealth() <= 0) {
+                            Navigation.hint1();
+                            inCombat = false;
+                        }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT2) {
                         thePlayer.swipe();
-                        spiderHint1.attack();
+                        spiderHint2.attack();
+                        if (spiderHint2.getHealth() <= 0) {
+                            Navigation.hint2();
+                            inCombat = false;
+                        }
                     } else {
-                        System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.");
+                        System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
-                    System.out.printf("Currently not in combat.");
+                    System.out.printf("Currently not in combat.%n");
                 }
                 break;
                 
@@ -137,16 +144,17 @@ public class DungeonGame {
                 if (inCombat == true) {
                     
                 } else {
-                    System.out.printf("Currently not in combat.");
+                    System.out.printf("Currently not in combat.%n");
                 } 
                 break;
+
                 
                 default:
-                System.out.printf("Type 'help' if you need a refresher on how to speak english.");
+                System.out.printf("Type 'help' if you need a refresher on how to speak english.%n");
                 break;
 
             }
-        } while(userAnswer == "hi");
+        } while(userAnswer != "QUIT");
 
     } //end of main
 
@@ -156,6 +164,7 @@ public class DungeonGame {
         System.out.printf("*To look at somthing, use command 'look' preceeding all requests.%n");
         System.out.printf("*To go to a place, use command 'go' preceeding all requests.%n");
         System.out.printf("*When fighting a monster, use command 'attack' preceeding all requests.%n");
+        System.out.printf("*When solving riddle, use command 'riddle' preceeding all requests.%n");
         System.out.printf("Valid attacks are:%n*Swipe%n*Punch%n");
     }
 
@@ -163,13 +172,6 @@ public class DungeonGame {
     public static void doorGo() {
         
     }
-    public static void hallwayGo() {
-
-    }
-    public static void chamberGo() {
-        
-    }
-
     //combat methods
 
     public static boolean inCombat = true;
