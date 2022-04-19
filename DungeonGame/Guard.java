@@ -70,12 +70,12 @@ public class Guard {
     private int swipe() {
         int damage = rand.nextInt(3) + 3; //3 levels of damage (3,4,5)
         damage = damage * guardStats[1];
-        System.out.printf("The guard swipes thier sword. They do %f damage.%n", damage);
+        System.out.printf("The guard swipes thier sword. They do %d damage.%n", damage);
         return damage;
     }
 
     private int punch() {
-        System.out.printf("The guard punches you. They do %f damage.%n", guardStats[1]);
+        System.out.printf("The guard punches you. They do %d damage.%n", guardStats[1]);
         return guardStats[1];
     }
     private void heasitate() {

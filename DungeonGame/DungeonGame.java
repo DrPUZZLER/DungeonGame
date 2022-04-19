@@ -81,7 +81,7 @@ public class DungeonGame {
 
                 case "LOOK HINT 1":
                 if (Navigation.currentLocation == Location.HINT1) {
-
+                    
                 } else {
                     Look.hint1Far();
                 }
@@ -114,7 +114,7 @@ public class DungeonGame {
                 case "ATTACK SWIPE":
                 if (inCombat == true) {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
-                        
+                        System.out.printf("");
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
                         
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
