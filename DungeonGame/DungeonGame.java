@@ -43,7 +43,7 @@ public class DungeonGame {
                 if (guardRiddle.getHealth() != 0) {
                     
                 } else {
-                        Navigation.riddle();
+                        Navigation.riddle();                 
                 }
                 break;
 
@@ -110,7 +110,7 @@ public class DungeonGame {
                 } else {
                     Look.hint2Far();
                 }
-                break;
+                break; 
 
                 case "ATTACK SWIPE":
                 if (inCombat == true) {
@@ -140,6 +140,9 @@ public class DungeonGame {
                 } else {
                     System.out.printf("Currently not in combat.");
                 } 
+                
+                case "RIDDLE CANDLE":
+                    Riddle.key();
                 break;
                 
                 default:
