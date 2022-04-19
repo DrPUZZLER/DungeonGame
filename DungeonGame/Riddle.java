@@ -10,7 +10,6 @@ public class Riddle {
     
     }
     public static void hint(){
-
             System.out.println("I am a non-living object...");
         }
     public static void anotherHint(){

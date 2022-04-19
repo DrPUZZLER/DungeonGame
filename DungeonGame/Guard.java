@@ -70,44 +70,16 @@ public class Guard {
     private int swipe() {
         int damage = rand.nextInt(3) + 3; //3 levels of damage (3,4,5)
         damage = damage * guardStats[1];
+        System.out.printf("The guard swipes thier sword. They do %d damage.%n", damage);
         return damage;
     }
 
-    public int block() {
-        //block blocks attack. chance of damage to be done
-        int blockAmount = rand.nextInt(4);
-        if (blockAmount == 0) {
-            blockAmount = 100;
-        } else if (blockAmount == 1) {
-          blockAmount = 3;  
-        } else if (blockAmount == 2) {
-            blockAmount = 5;
-        } else if (blockAmount == 3) {
-            blockAmount = 10;
-        }
-        return blockAmount;
-
-    }
-
-    public int parry() {
-        //parry blocks attack while doing damage
-        int damageAmount = rand.nextInt(3) + 1;
-
-        if (damageAmount == 1) {
-            damageAmount = 3;  
-        } else if (damageAmount == 2) {
-            damageAmount = 5;
-        } else if (damageAmount == 3) {
-            damageAmount = 7;
-        }
-        return damageAmount;
-    }
-
     private int punch() {
+        System.out.printf("The guard punches you. They do %d damage.%n", guardStats[1]);
         return guardStats[1];
     }
     private void heasitate() {
-        System.out.println("The Guard hesitates");
+        System.out.printf("The Guard hesitates.%n");
     }
     //get and set health
     public void setHealth(int newHealth) {
