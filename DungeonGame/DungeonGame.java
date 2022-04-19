@@ -23,18 +23,21 @@ public class DungeonGame {
             switch (userAnswer.toUpperCase()) {
 
                 case "GO HINT 1":
+
                 if (spiderHint1.getHealth() <= 0) {
-                    
-                } else {
                     Navigation.enemyHint1();
+                } else {
+                    Navigation.hint1();
                 }
                 break;
 
                 case "GO HINT 2":
+
                 if (spiderHint2.getHealth() <= 0) {
                     
-                } else {
 
+                } else {
+                        Navigation.hint2();
                 }
                 break;
                 
@@ -42,7 +45,7 @@ public class DungeonGame {
                 if (guardRiddle.getHealth() <= 0) {
                     
                 } else {
-
+                        Navigation.riddle();                 
                 }
                 break;
 
@@ -50,8 +53,8 @@ public class DungeonGame {
                 if (guardDoor.getHealth() <= 0) {
                     
                 } else {
-
-                }
+                        Navigation.door();
+                }   
                 break;
 
                 case "HELP":
@@ -67,7 +70,7 @@ public class DungeonGame {
                 break;
 
                 case "LOOK HINT":
-                System.out.printf("Which hint? There are 2 of them!%n");
+                Look.hint();
                 break;
 
                 case "LOOK HINT 1":
@@ -88,6 +91,7 @@ public class DungeonGame {
 
                 case "LOOK HINT 2":
                 if (Navigation.currentLocation == Location.HINT1) {
+                         
 
                 } else {
                     Look.hint1Far();
@@ -100,7 +104,7 @@ public class DungeonGame {
                 } else {
                     Look.hint2Far();
                 }
-                break;
+                break; 
 
                 case "ATTACK SWIPE":
                 if (inCombat == true) {
@@ -146,6 +150,9 @@ public class DungeonGame {
                 } else {
                     System.out.printf("Currently not in combat.%n");
                 } 
+                
+                case "RIDDLE CANDLE":
+                    Riddle.key();
                 break;
 
                 
@@ -154,7 +161,9 @@ public class DungeonGame {
                 break;
 
             }
+
         } while(userAnswer != "QUIT");
+
 
     } //end of main
 

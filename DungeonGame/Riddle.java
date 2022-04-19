@@ -16,6 +16,7 @@ public class Riddle {
             System.out.println("I can create light...");
         }
     public static void key(){
+        System.out.println("Correct!");
         System.out.println("You have recieved a key!");
         key = true; 
     }
