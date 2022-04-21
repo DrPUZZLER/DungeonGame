@@ -67,7 +67,7 @@ public class Navigation {
         if (DungeonGame.inCombat != true) {
         currentLocation = Location.DOOR;
         DungeonGame.doorGo();
-        System.out.printf("You have walked unto door%n");
+        System.out.printf("You go to the door. It is an ordinary door. You know, the kind with wood? And maybe a handle?%n");
         } else {
             DungeonGame.cannotMove();
         }

@@ -253,7 +253,7 @@ public class DungeonGame {
                 break;
 
                 case "QUIT":
-                System.out.printf("Quitting the game.%n");
+                System.out.printf("haha, quitter.%n");
                 switchRun = 1;
                 break;
                 

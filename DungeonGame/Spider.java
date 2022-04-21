@@ -58,6 +58,7 @@ public class Spider {
     private int lunge() {
         int damage = rand.nextInt(4) + 1; //4 levels of damage
         damage = damage * spiderStats[1];
+        System.out.printf("The spider lunges at you. It does %d damage.%n", damage);
         return damage;
     }
 
