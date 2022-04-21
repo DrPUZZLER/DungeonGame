@@ -15,8 +15,8 @@ public class Riddle {
             System.out.printf("I can create light...%n");
         }
     public static void key(){
-        System.out.printf("Correct!%n");
-        System.out.printf("You have recieved a key!%n");
+        System.out.printf("The old man smiles. 'Correct!', he says. He grabs a key, and gives it to you.%n");
+        System.out.printf("You take it. It is sticky. Gross.");
         key = true; 
     }
 

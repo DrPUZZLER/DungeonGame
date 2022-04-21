@@ -165,7 +165,7 @@ public class DungeonGame {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
-                    System.out.printf("Currently not in combat.%n");
+                    System.out.printf("You swipe your sword through the air. Good job, dummy.%n");
                 }
                 break;
                 
@@ -231,13 +231,24 @@ public class DungeonGame {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
-                    System.out.printf("Currently not in combat.%n");
+                    System.out.printf("You punch nothing. You look like an idiot.%n");
                 }
                 break;
 
                 case "RIDDLE CANDLE":
                 if (Navigation.currentLocation == Location.RIDDLE) {
                     Riddle.key();
+                } else {
+                    System.out.printf("Why are you giving the answer to the air? What's wrong with you, stupido!");
+                }
+                break;
+
+                case "USE KEY":
+                if (Navigation.currentLocation == Location.DOOR) {
+                    System.out.printf("You use the key and open the door.%nCongratulations! You have escaped the dungeon! I- *sniff* I'm so proud of you!");
+                    switchRun = 1;
+                } else {
+                    System.out.printf("There is nowhere to use the key at this location. Idiot.");
                 }
                 break;
 
@@ -263,6 +274,7 @@ public class DungeonGame {
         System.out.printf("*To look at somthing, use command 'look' preceeding all requests.%n");
         System.out.printf("*To go to a place, use command 'go' preceeding all requests.%n");
         System.out.printf("*When solving riddle, use command 'riddle' preceeding all requests.%n");
+        System.out.printf("When using an item, use command 'use' preceeding al requests%n");
         System.out.printf("*When fighting a monster, use command 'attack' preceeding all requests.%n");
         System.out.printf("Valid attacks are:%n*Swipe- Swipe is the basic attack, and does a fair amount of damage.%n");
         System.out.println("*Punch- Punch is typically weaker than swipe, but has a 5% chance to one-hit any monster.");
