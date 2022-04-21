@@ -39,7 +39,7 @@ public class DungeonGame {
                 }
                 break;
                 
-                case "GO RIDDLE":
+                case "GO OLD MAN":
                 if (guardRiddle.getHealth() <= 0) {
                     Navigation.riddle();
                 } else {
@@ -73,7 +73,7 @@ public class DungeonGame {
 
                 case "LOOK HINT 1":
                 if (Navigation.currentLocation == Location.HINT1) {
-                    
+                    Riddle.hint();
                 } else {
                     Look.hint1Far();
                 }
@@ -81,7 +81,7 @@ public class DungeonGame {
 
                 case "LOOK HINT1":
                 if (Navigation.currentLocation == Location.HINT2) {
-
+                    Riddle.hint();
                 } else {
                     Look.hint2Far();
                 }
@@ -89,8 +89,7 @@ public class DungeonGame {
 
                 case "LOOK HINT 2":
                 if (Navigation.currentLocation == Location.HINT1) {
-                         
-
+                         Riddle.anotherHint();
                 } else {
                     Look.hint1Far();
                 }
@@ -98,7 +97,7 @@ public class DungeonGame {
 
                 case "LOOK HINT2":
                 if (Navigation.currentLocation == Location.HINT2) {
-
+                    Riddle.anotherHint();
                 } else {
                     Look.hint2Far();
                 }
@@ -263,9 +262,10 @@ public class DungeonGame {
         System.out.printf("In this game, you will be solving puzzles, navigating the dungeon, and fighting monsters.%n");
         System.out.printf("*To look at somthing, use command 'look' preceeding all requests.%n");
         System.out.printf("*To go to a place, use command 'go' preceeding all requests.%n");
-        System.out.printf("*When fighting a monster, use command 'attack' preceeding all requests.%n");
         System.out.printf("*When solving riddle, use command 'riddle' preceeding all requests.%n");
-        System.out.printf("Valid attacks are:%n*Swipe%n*Punch%n");
+        System.out.printf("*When fighting a monster, use command 'attack' preceeding all requests.%n");
+        System.out.printf("Valid attacks are:%n*Swipe- Swipe is the basic attack, and does a fair amount of damage.%n");
+        System.out.println("*Punch- Punch is typically weaker than swipe, but has a 5% chance to one-hit any monster.");
         System.out.printf("To quit the game, type 'quit'%n");
     }
 

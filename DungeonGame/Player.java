@@ -21,8 +21,18 @@ public int swipe() {
 }
 
 public int punch() {
-    int damage = rand.nextInt(5) + 1; //max of 5 damage for punch
-    System.out.printf("You sock that monster in the face. You do %d damage.%n", damage);
+    int random = rand.nextInt(20);
+    int damage = 0;
+    if (random != 14) {
+        damage = rand.nextInt(5) + 1; //max of 5 damage for punch
+        System.out.printf("You sock that monster in the face. You do %d damage.%n", damage);
+    } else {
+        System.out.printf("You feel energy surge within you.%n");
+        System.out.printf("You punch that monster right in the gut, and kill it with sheer force of awseomeness!%n");
+        damage = 100;
+    }
+    
+    
     return damage;
 }
 
