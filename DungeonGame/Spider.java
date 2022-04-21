@@ -36,16 +36,18 @@ public class Spider {
             } else if (spiderStats[2] == 2) {
                 attack = rand.nextInt(2);
                 if (attack == 0) {
-                    lunge();
+                    damage = lunge();
                 } else {
                     heasitate();
+                    damage = 0;
                 }
             } else if (spiderStats[2] == 3) {
                 attack = rand.nextInt(3);
                 if (attack == 0) {
-                    lunge();
+                    damage = lunge();
                 } else {
                     heasitate();
+                    damage = 0;
                 }
             }
         }

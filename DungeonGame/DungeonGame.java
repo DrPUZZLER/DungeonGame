@@ -221,7 +221,7 @@ public class DungeonGame {
                             inCombat = false;
                             Navigation.hint2();
                         } else {
-                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint2 .attack());
+                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint2.attack());
                             System.out.printf("You have %d health.%n", thePlayer.getHealth());
                             if (thePlayer.getHealth() <= 0) {
                                 playerDeath();
