@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class DungeonGame {
+        public static int switchRun = 0;
         public static void main(String[] args) {
         // instantiate constructors for enemies
         Spider spiderHint1 = new Spider(15, 2, 2);
@@ -11,7 +12,7 @@ public class DungeonGame {
         //create scanner and input var
         String userAnswer; 
         Scanner input = new Scanner(System.in);
-        int switchRun = 0;
+       
         //call help a first time
         help();
         //the do-while loop % switch statement for user input
@@ -108,38 +109,58 @@ public class DungeonGame {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
                         guardDoor.setHealth(thePlayer.swipe());
                         System.out.printf("The guard has %d health.%n", guardDoor.getHealth());
-                        guardDoor.attack();
                         if (guardDoor.getHealth() <= 0) {
                             System.out.printf("You defeat the guard.%n");
                             inCombat = false;
                             Navigation.door();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - guardDoor.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
                         guardRiddle.setHealth(thePlayer.swipe());
                         System.out.printf("The guard has %d health.%n", guardRiddle.getHealth());
-                        guardRiddle.attack();
                         if (guardRiddle.getHealth() <= 0) {
                             System.out.printf("You defeat the guard.%n");
                             inCombat = false;
                             Navigation.riddle();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - guardRiddle.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
                         spiderHint1.setHealth(thePlayer.swipe());
                         System.out.printf("The spider has %d health.%n", spiderHint1.getHealth());
-                        spiderHint1.attack();
                         if (spiderHint1.getHealth() <= 0) {
                             System.out.printf("You defeat the spider.%n");
                             inCombat = false;
                             Navigation.hint1();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint1.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT2) {
                         spiderHint2.setHealth(thePlayer.swipe());
                         System.out.printf("The spider has %d health.%n", spiderHint2.getHealth());
-                        spiderHint2.attack();
                         if (spiderHint2.getHealth() <= 0) {
                             System.out.printf("You defeat the spider.%n");
                             inCombat = false;
                             Navigation.hint2();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint2.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
@@ -154,38 +175,58 @@ public class DungeonGame {
                     if (Navigation.currentLocation == Location.ENEMY_DOOR) {
                         guardDoor.setHealth(thePlayer.punch());
                         System.out.printf("The guard has %d health.%n", guardDoor.getHealth());
-                        guardDoor.attack();
                         if (guardDoor.getHealth() <= 0) {
                             System.out.printf("You defeat the guard.%n");
                             inCombat = false;
                             Navigation.door();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - guardDoor.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_RIDDLE) {
                         guardRiddle.setHealth(thePlayer.punch());
                         System.out.printf("The guard has %d health.%n", guardRiddle.getHealth());
-                        guardRiddle.attack();
                         if (guardRiddle.getHealth() <= 0) {
                             System.out.printf("You defeat the guard.%n");
                             inCombat = false;
                             Navigation.riddle();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - guardRiddle.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT1) {
                         spiderHint1.setHealth(thePlayer.punch());
                         System.out.printf("The spider has %d health.%n", spiderHint1.getHealth());
-                        spiderHint1.attack();
                         if (spiderHint1.getHealth() <= 0) {
                             System.out.printf("You defeat the spider.%n");
                             inCombat = false;
                             Navigation.hint1();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint1.attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else if (Navigation.currentLocation == Location.ENEMY_HINT2) {
                         spiderHint2.setHealth(thePlayer.punch());
                         System.out.printf("The spider has %d health.%n", spiderHint2.getHealth());
-                        spiderHint2.attack();
                         if (spiderHint2.getHealth() <= 0) {
                             System.out.printf("You defeat the spider.%n");
                             inCombat = false;
                             Navigation.hint2();
+                        } else {
+                            thePlayer.setHealth(thePlayer.getHealth() - spiderHint2 .attack());
+                            System.out.printf("You have %d health.%n", thePlayer.getHealth());
+                            if (thePlayer.getHealth() <= 0) {
+                                playerDeath();
+                            }
                         }
                     } else {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
@@ -238,6 +279,10 @@ public class DungeonGame {
 
     public static void cannotMove() {
         System.out.printf("You cannot leave, you are in combat!%n");
+    }
+    public static void playerDeath() {
+        System.out.printf("you died lol. start again noob%n");
+        switchRun = 1;
     }
    
     

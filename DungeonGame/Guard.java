@@ -62,9 +62,7 @@ public class Guard {
         return damage;
     }
 
-    public void death(Guard guardToKill) {
-
-    }
+    
 
     // methods for diffrent attacks/defenses
     private int swipe() {
