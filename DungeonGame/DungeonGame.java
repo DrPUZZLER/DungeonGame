@@ -162,19 +162,18 @@ public class DungeonGame {
                             }
                         }
                     } else {
-                        if (Navigation.currentLocation == Location.RIDDLE) {
-                        System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!");
-                    } else {
-                        if (Navigation.currentLocation == Location.RIDDLE) {
-                            System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!%n");
-                        } else {
-                            System.out.printf("You punch nothing. You look like an idiot.%n");
-                        }
-                    }
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
-                    System.out.printf("You swipe your sword through the air. Good job, dummy.%n");
+                    if (Navigation.currentLocation == Location.RIDDLE) {
+                        System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!%n");
+                        System.out.printf("You know what, that's it! I'm done with you!!%n");
+                        thePlayer.setHealth(-1000000);
+                        System.out.printf("Your health: -100000");
+                        playerDeath();
+                    } else {
+                        System.out.printf("You swipe your sword through the air. Good job dummy.%n");
+                    }
                 }
                 break;
                 
@@ -242,6 +241,10 @@ public class DungeonGame {
                 } else {
                     if (Navigation.currentLocation == Location.RIDDLE) {
                         System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!%n");
+                        System.out.printf("You know what, that's it! I'm done with you!!%n");
+                        thePlayer.setHealth(-1000000);
+                        System.out.printf("Your health: -100000");
+                        playerDeath();
                     } else {
                         System.out.printf("You punch nothing. You look like an idiot.%n");
                     }
@@ -272,6 +275,11 @@ public class DungeonGame {
                 
                 case "SAND":
                 System.out.printf("I hate sand. Its course, and ruff, and irritating. And it gets everywhere.%n");
+                break;
+
+                case "U N I T Y S  P A R T I C L E  S Y S T E M":
+                System.out.printf("https://www.youtube.com/shorts/DX-UCMRL0OU");
+
                 default:
                 System.out.printf("Type 'help' if you need a refresher on how to speak english.%n");
                 break;
@@ -308,7 +316,7 @@ public class DungeonGame {
         System.out.printf("You cannot leave, you are in combat!%n");
     }
     public static void playerDeath() {
-        System.out.printf("you died lol. start again noob%n");
+        System.out.printf("you ded lol. start again noob%n");
         switchRun = 1;
     }
    
