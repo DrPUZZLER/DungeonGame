@@ -162,6 +162,15 @@ public class DungeonGame {
                             }
                         }
                     } else {
+                        if (Navigation.currentLocation == Location.RIDDLE) {
+                        System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!");
+                    } else {
+                        if (Navigation.currentLocation == Location.RIDDLE) {
+                            System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!%n");
+                        } else {
+                            System.out.printf("You punch nothing. You look like an idiot.%n");
+                        }
+                    }
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
@@ -231,7 +240,11 @@ public class DungeonGame {
                         System.out.printf("Hmm, there must be a problem. You are in combat, but not in a combat zone.%n");
                     }
                 } else {
-                    System.out.printf("You punch nothing. You look like an idiot.%n");
+                    if (Navigation.currentLocation == Location.RIDDLE) {
+                        System.out.printf("Why would you do that!!! You're so mean!!! Why would you hurt poor old Gandaldore like that!!!%n");
+                    } else {
+                        System.out.printf("You punch nothing. You look like an idiot.%n");
+                    }
                 }
                 break;
 
@@ -257,6 +270,8 @@ public class DungeonGame {
                 switchRun = 1;
                 break;
                 
+                case "SAND":
+                System.out.printf("I hate sand. Its course, and ruff, and irritating. And it gets everywhere.%n");
                 default:
                 System.out.printf("Type 'help' if you need a refresher on how to speak english.%n");
                 break;

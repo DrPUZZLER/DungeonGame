@@ -6,7 +6,7 @@ public class Navigation {
         if (DungeonGame.inCombat != true) {
             DungeonGame.inCombat = true;
             currentLocation = Location.ENEMY_DOOR;
-            System.out.printf("You go to the door, but it is blocked by a guard! You'll have to fight your way out of this one!%n");
+            System.out.printf("You go to the door, but it is blocked by a guard! His name is Dave! You'll have to fight your way out of this one!%n");
         } else {
             DungeonGame.cannotMove();
         }
@@ -15,7 +15,7 @@ public class Navigation {
         if (DungeonGame.inCombat != true) {
         DungeonGame.inCombat = true;
         currentLocation = Location.ENEMY_HINT1;
-        System.out.printf("You go to hint 1, but it is blocked by a spider! You'll have to fight your way out of this one!%n");
+        System.out.printf("You go to hint 1, but it is blocked by a spider! Thier name is Greg! You'll have to fight your way out of this one!%n");
         } else {
             DungeonGame.cannotMove();
         }
@@ -24,7 +24,7 @@ public class Navigation {
         if (DungeonGame.inCombat != true) {
             DungeonGame.inCombat = true;
             currentLocation = Location.ENEMY_HINT2;
-            System.out.printf("You go to hint 2, but it is blocked by a spider! You'll have to fight your way out of this one!%n");
+            System.out.printf("You go to hint 2, but it is blocked by a spider! Thier name is Doug! You'll have to fight your way out of this one!%n");
             } else {
                 DungeonGame.cannotMove();
             }
@@ -33,7 +33,7 @@ public class Navigation {
         if (DungeonGame.inCombat != true) {
             DungeonGame.inCombat = true;
             currentLocation = Location.ENEMY_RIDDLE;
-            System.out.printf("You go to the old man, but he is blocked by a guard! You'll have to fight your way out of this one!%n");
+            System.out.printf("You go to the old man, but he is blocked by a guard! His name is Steve! You'll have to fight your way out of this one!%n");
             } else {
                 DungeonGame.cannotMove();
             }
